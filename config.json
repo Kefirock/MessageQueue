@@ -1,0 +1,274 @@
+{
+    "parameters":
+    {
+        "simulation_time": 60,
+        "simulation_multiplier": 100
+    },
+
+    "members":
+    [
+        {
+            "name": "httpb_exchange",
+            "queues":
+            [
+                {
+                    "id": 9,
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.00956,
+                    "port": 4000
+                }
+            ]
+        },
+        {
+            "name": "agbroker_control",
+            "queues":
+            [
+                {
+                    "id": 9,
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.00543,
+                    "port": 4000
+                }
+            ]
+        },
+        {
+            "name": "exchange_ams",
+            "count": 2,
+            "queues":
+            [
+                {
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.14910,
+                    "port": 2000
+                },
+                {
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.03562,
+                    "port": 2001
+                },
+                {
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.03855,
+                    "port": 2002
+                },
+                {
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.05942,
+                    "port": 2003
+                },
+
+                {
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.23910333333,
+                    "port": 2005
+                },
+                {
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.23910333333,
+                    "port": 2006
+                },
+                {
+                    "role": "publisher",
+                    "type": "random",
+                    "rate": 0.23910333333,
+                    "port": 2007
+                }
+            ]
+        },
+
+        {
+            "name": "rmw",
+            "queues":
+            [
+                {
+                    "id": 2,
+                    "role": "subscriber",
+                    "port": 2000,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 2,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1.56904,
+                    "port": 3000
+                }
+            ]
+        },
+        {
+            "name": "vww",
+            "queues":
+            [
+                {
+                    "id": 3,
+                    "role": "subscriber",
+                    "port": 2001,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 3,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1.0,
+                    "port": 3000
+                }
+            ]
+        },
+        {
+            "name": "vinf",
+            "queues":
+            [
+                {
+                    "id": 4,
+                    "role": "subscriber",
+                    "port": 2002,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 4,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 0.84302,
+                    "port": 3000
+                }
+            ]
+        },
+        {
+            "name": "pcw",
+            "queues":
+            [
+                {
+                    "id": 5,
+                    "role": "subscriber",
+                    "port": 2003,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 5,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1.10423,
+                    "port": 3000
+                }
+            ]
+        },
+
+        {
+            "name": "exchange",
+            "queues":
+            [
+                {
+                    "id": 7,
+                    "role": "subscriber",
+                    "port": 3000,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 7,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1.19054,
+                    "port": 4000
+                }
+            ]
+        },
+
+        {
+            "name": "gwpusher1",
+            "queues":
+            [
+                {
+                    "id": 16,
+                    "role": "subscriber",
+                    "port": 2005,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 16,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1,
+                    "port": 4000
+                }
+            ]
+        },
+        {
+            "name": "gwpusher2",
+            "queues":
+            [
+                {
+                    "id": 15,
+                    "role": "subscriber",
+                    "port": 2006,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 15,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1,
+                    "port": 4000
+                }
+            ]
+        },
+        {
+            "name": "gwpusher3",
+            "queues":
+            [
+                {
+                    "id": 17,
+                    "role": "subscriber",
+                    "port": 2007,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 17,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1,
+                    "port": 4000
+                }
+            ]
+        },
+
+        {
+            "name": "agbroker_clients",
+            "queues":
+            [
+                {
+                    "id": 8,
+                    "role": "subscriber",
+                    "port": 4000,
+                    "processing_time_ms": 0
+                },
+                {
+                    "id": 8,
+                    "role": "publisher",
+                    "type": "fixed",
+                    "rate": 1,
+                    "port": 5000
+                }
+            ]
+        },
+        {
+            "name": "agents",
+            "queues":
+            [
+                {
+                    "id": 9,
+                    "role": "subscriber",
+                    "port": 5000,
+                    "processing_time_ms": 0
+                }
+            ]
+        }
+    ]
+}
